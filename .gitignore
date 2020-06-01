@@ -3,5 +3,6 @@
 build
 gradle
 settings.gradle
-gradlelew.bat
-gradlelew
+gradlew.bat
+gradlew
+.DS_Store

@@ -118,4 +118,15 @@ public class ProductRepository {
         public Product getById(final Integer id){
             return this.productsById.get(id);
         }
+
+        public void add(Integer id, Product product){
+            this.productsById.put(product.getId(),product);
+        }
+
+        public void delete(Integer id){
+        this.productsById.remove(id);
+        }
+        public void update(Integer id, Product product){
+        this.productsById.put(id,product);
+        }
 }
