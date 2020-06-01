@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Product Detail</h3>
+<table id="products">
+    <thead>
+        <th>ID</th>
+        <th>PRODUCT NAME</th>
+        <th>PRODUCT PRICE</th>
+        <th>PRODUCT IN STOCK</th>
+        <th>FUNCTIONS</th>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat :${product}">
+        <td th:text="${row.getId()}"></td>
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getPrice()}"></td>
+        <td th:text="${row.isInStock()}"></td>
+        <td><a th:href="@{/}">BACK TO LISTING</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
