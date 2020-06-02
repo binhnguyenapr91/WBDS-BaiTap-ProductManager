@@ -8,7 +8,7 @@
 <h3>Add Product</h3>
 <form action="#" th:action="@{/products/add}" th:object="${product}" method="post">
     <input type="hidden" th:field="*{id}"><br>
-    <label>Name</label><input type="text" th:field="*{name}"><br>
+    <label>Name</label><input type="text" th:field="${product.name}"><br>
     <label>Price</label><input type="text" th:field="*{price}"><br>
     <label>InStock</label><input type="text" th:field="*{inStock}"/><br>
     <input type="submit" value="Submit"/>

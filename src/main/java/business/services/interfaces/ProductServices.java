@@ -1,4 +1,4 @@
-package business.services.impl;
+package business.services.interfaces;
 
 import business.entities.Product;
 import java.util.List;

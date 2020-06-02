@@ -1,8 +1,9 @@
 package config;
 
-import business.entities.Product;
 import business.services.IProductServices;
-import business.services.impl.ProductServices;
+import business.services.IUserService;
+import business.services.interfaces.ProductServices;
+import business.services.interfaces.UserService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -16,9 +17,6 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Configuration
 @EnableWebMvc
@@ -60,5 +58,10 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     @Bean
     public ProductServices productServices(){
         return new IProductServices();
+    }
+
+    @Bean
+    public UserService userService(){
+        return new IUserService();
     }
 }

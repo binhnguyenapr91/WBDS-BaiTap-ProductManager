@@ -2,7 +2,7 @@ package business.services;
 
 import business.entities.Product;
 import business.entities.repositories.ProductRepository;
-import business.services.impl.ProductServices;
+import business.services.interfaces.ProductServices;
 
 import java.util.List;
 

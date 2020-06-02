@@ -1,7 +1,7 @@
 package web.controller;
 
 import business.entities.Product;
-import business.services.impl.ProductServices;
+import business.services.interfaces.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class ProductController {
     @Autowired
     private ProductServices productServices;
 
-    @GetMapping("/")
+    @GetMapping("/listing")
     ModelAndView showAllProduct(){
         ModelAndView modelAndView = new ModelAndView("listing");
         modelAndView.addObject("products",productServices.getAllProduct());
@@ -35,7 +35,7 @@ public class ProductController {
         product.setId((int) (Math.random()*1000));
         productServices.addProduct(product.getId(),product);
         redirectAttributes.addFlashAttribute("message","Add product successfull!");
-        return new RedirectView("/");
+        return new RedirectView("/listing");
     }
 
     @GetMapping("/products/{id}/delete")
@@ -58,7 +58,7 @@ public class ProductController {
     RedirectView updateCustomer(Product product,RedirectAttributes redirectAttributes){
         productServices.updateProduct(product.getId(),product);
         redirectAttributes.addFlashAttribute("success","Update Product Successful");
-        return new RedirectView("/");
+        return new RedirectView("/listing");
 
     }
 
